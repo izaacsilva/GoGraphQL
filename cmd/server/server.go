@@ -4,7 +4,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/izaacsilva/GoGraphQL/graph"
@@ -13,6 +12,11 @@ import (
 const defaultPort = "8080"
 
 func main() {
+	db, err := sql.Open("sqlite3", "./data.db")
+	if err != nil {
+		log.Fatalf("failed to open database: %v", err)
+	}
+	defer db.Close()
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort

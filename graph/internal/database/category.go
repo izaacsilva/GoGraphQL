@@ -13,9 +13,7 @@ type Category struct {
 }
 
 func NewCategory(db *sql.DB) *Category {
-	return &Category{
-		db: db
-	}
+	return &Category{db: db}
 }
 
 func (c *Category) Create(name string, description string) (Category, error) {
