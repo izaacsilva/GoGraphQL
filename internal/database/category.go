@@ -6,7 +6,7 @@ import (
 )
 
 type Category struct {
-	 db *sql.db
+	 db *sql.DB
 	 ID string
 	 Name string
 	 Description string

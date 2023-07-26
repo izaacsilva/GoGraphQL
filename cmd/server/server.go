@@ -1,12 +1,15 @@
 package main
 
 import (
+	"database/sql"
 	"log"
 	"net/http"
 	"os"
+
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/izaacsilva/GoGraphQL/graph"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 const defaultPort = "8080"
